@@ -22,10 +22,10 @@ const Homepage = () => {
       </div>
       <main className=" z-20 relative w-full  h-[90vh] flex gap-5 flex-col justify-center items-center">
         {/* <Image src='v' /> */}
-        <h1 className="sm:max-w-[850px]  leading-[180%] w-5/6 text-xl sm:text-4xl font-black text-center">
+        <h1 className="sm:max-w-[850px]  leading-[180%] w-full text-xl sm:text-4xl font-black text-center">
           Elevate Learning Experiences with Our School Management Solution
         </h1>
-        <p className=" font-light text-neutral-200 w-5/6 sm:max-w-[900px] text-lg text-center ">
+        <p className=" font-light text-neutral-200 w-full sm:max-w-[900px] text-lg text-center ">
           Effortless school management, from attendance tracking to grade
           reporting, all in one place.
         </p>
