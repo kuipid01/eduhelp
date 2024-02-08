@@ -1,8 +1,10 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../public/logo.png";
 import Link from "next/link";
 import ButtonComp from "./Button";
+import { Menu, X } from "lucide-react";
 export const Navlinks = [
   {
     name: "Home",
@@ -21,6 +23,7 @@ export const Navlinks = [
   },
 ];
 const Navbar = () => {
+  const [menuOpen, setmenuOpen] = useState(false);
   return (
     <nav className=" h-[10vh] w-full  justify-between items-center flex ">
       <div className="flex h-fit  items-center  gap-3">
@@ -45,6 +48,7 @@ const Navbar = () => {
         <ButtonComp transparent={false} text="Sign up" />
         <ButtonComp transparent={true} text="Log in" />
       </div>
+      <div className="flex sm:hidden"> {!menuOpen ? <Menu /> : <X />}</div>
     </nav>
   );
 };
