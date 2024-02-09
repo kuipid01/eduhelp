@@ -19,10 +19,10 @@ const Extras: React.FC<ExtraProps> = ({
   return (
     <section
       className={` gap-10 txt-black items-center w-full sm:w-4/5 mx-auto ${
-        reversed ? "flex-col-reverse sm:flex-row-reverse" : ""
-      } my-5 flex sm:flex-row flex-col h-fit sm:h-[70vh] py-5  sm:my-10`}
+        reversed ? " sm:flex-row-reverse" : ""
+      } my-5 px-3  sm:px-0 flex sm:flex-row flex-col h-fit sm:h-[70vh] py-5  sm:my-10`}
     >
-      <div className="sm:w-2/5 w-full h-[50vh] rounded-3xl overflow-hidden bg-brand/prim-blue relative p-2 sm:h-full">
+      <div className="sm:w-2/5 w-full h-[30vh] rounded-3xl overflow-hidden bg-brand/prim-blue relative p-2 sm:h-full">
         <Image
           className="  object-cover relative object-center"
           fill

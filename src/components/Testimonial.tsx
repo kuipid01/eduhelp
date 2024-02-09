@@ -49,7 +49,7 @@ const Testimonial = () => {
           {[1, 2, 3, 4, 6, 7, 8].map((item, i) => (
             <CarouselItem
               key={i}
-              className="basis-1/2 sm:basis-1/3 lg:basis-1/4 h-full"
+              className="basis-full sm:basis-1/2 lg:basis-1/4 h-full"
             >
               <Testimony />
             </CarouselItem>
