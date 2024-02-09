@@ -3,7 +3,7 @@ import ButtonComp from "./Button";
 
 const Addboard = () => {
   return (
-    <div className="relative overflow-hidden flex gap-5 flex-col items-left justify-center px-10 py-3 text-white  bg-brand/prim-blue h-fit max-h-[40vh]">
+    <div className="relative overflow-hidden flex gap-5 flex-col items-left justify-center px-5 sm:px-10 py-3 text-white  bg-brand/prim-blue h-fit max-h-[40vh]">
       <div className="z-10 bg-green-300 overflow-y-hidden opacity-20 absolute top-0 left-0 w-full h-full flex justify-between">
         {Array.from({ length: 4 }).map((item, i) => (
           <div className="w-[1px]  h-screen bg-neutral-400" key={i}></div>
@@ -19,9 +19,9 @@ const Addboard = () => {
       </div>
 
       <h1 className="sm:text-2xl capitalize text-xl font-black">Get The App</h1>
-      <div className="flex sm:flex-row flex-col items-center  justify-between">
+      <div className="flex sm:flex-row flex-col items-start sm:items-center  justify-between">
         {" "}
-        <p className="text-lg w-full sm:max-w-[570px] text-left leading-9">
+        <p className=" mb-4 sm:mb-0 w-full sm:max-w-[570px] text-left sm:leading-9">
           Don&apos;t want to go through the hassle of having to come to the
           website ? why not download the app
         </p>
