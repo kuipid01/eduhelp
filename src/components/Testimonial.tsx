@@ -47,7 +47,10 @@ const Testimonial = () => {
       <Carousel className=" h-[70vh] flex justify-center items-center flex-1 ">
         <CarouselContent>
           {[1, 2, 3, 4, 6, 7, 8].map((item, i) => (
-            <CarouselItem key={i} className="basis-1/4 h-full">
+            <CarouselItem
+              key={i}
+              className="basis-1/2 sm:basis-1/3 lg:basis-1/4 h-full"
+            >
               <Testimony />
             </CarouselItem>
           ))}

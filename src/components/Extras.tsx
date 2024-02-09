@@ -20,7 +20,7 @@ const Extras: React.FC<ExtraProps> = ({
     <section
       className={` gap-10 txt-black items-center w-full sm:w-4/5 mx-auto ${
         reversed ? "flex-col-reverse sm:flex-row-reverse" : ""
-      } my-5 flex sm:flex-row flex-col h-[50vh] sm:h-[70vh] py-5  sm:my-10`}
+      } my-5 flex sm:flex-row flex-col h-fit sm:h-[70vh] py-5  sm:my-10`}
     >
       <div className="sm:w-2/5 w-full h-[50vh] rounded-3xl overflow-hidden bg-brand/prim-blue relative p-2 sm:h-full">
         <Image
