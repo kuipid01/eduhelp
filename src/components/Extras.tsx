@@ -22,7 +22,7 @@ const Extras: React.FC<ExtraProps> = ({
         reversed ? "flex-col-reverse sm:flex-row-reverse" : ""
       } my-5 flex sm:flex-row flex-col h-[50vh] sm:h-[70vh] py-5  sm:my-10`}
     >
-      <div className="w-2/5 rounded-3xl overflow-hidden bg-brand/prim-blue relative p-2 h-full">
+      <div className="sm:w-2/5 w-full rounded-3xl overflow-hidden bg-brand/prim-blue relative p-2 h-full">
         <Image
           className="  object-cover relative object-center"
           fill

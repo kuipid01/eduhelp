@@ -1,7 +1,13 @@
 import React from "react";
 
 const Testimonial = () => {
-  return <div>Testimonial</div>;
+  return (
+    <section>
+      <h1 className=" text-2xl text-center">Testimonials</h1>
+
+      <div></div>
+    </section>
+  );
 };
 
 export default Testimonial;
