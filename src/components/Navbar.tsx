@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Logo from "../../public/logo.png";
 import Link from "next/link";
 import ButtonComp from "./Button";
-import { Menu, X } from "lucide-react";
+import MenuComp from "./Menu";
 export const Navlinks = [
   {
     name: "Home",
@@ -48,7 +48,7 @@ const Navbar = () => {
         <ButtonComp transparent={false} text="Sign up" />
         <ButtonComp transparent={true} text="Log in" />
       </div>
-      <div className="flex sm:hidden"> {!menuOpen ? <Menu /> : <X />}</div>
+      <MenuComp menuOpen={menuOpen} />
     </nav>
   );
 };

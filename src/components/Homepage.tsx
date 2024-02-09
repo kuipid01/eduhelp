@@ -2,17 +2,18 @@ import React from "react";
 import Navbar from "./Navbar";
 import ButtonComp from "./Button";
 import Image from "next/image";
+import Extras from "./Extras";
 
 const Homepage = () => {
   return (
-    <section className=" flex justify-between flex-col items-center text-white px-10 bg-brand/prim-blue h-screen">
+    <section className="relative flex justify-between flex-col items-center text-white px-10 bg-brand/prim-blue h-screen">
       <Navbar />{" "}
-      <div className="z-10 opacity-20 fixed top-0 left-0 w-full h-screen flex justify-between">
+      <div className="z-10 bg-green-300 overflow-hidden opacity-20 absolute top-0 left-0 w-full h-full flex justify-between">
         {Array.from({ length: 10 }).map((item, i) => (
           <div className="w-[1px] h-screen bg-neutral-400" key={i}></div>
         ))}
       </div>
-      <div className="z-10 fixed top-0 left-0 w-full h-screen flex flex-col justify-between">
+      <div className="z-10 overflow-y-hidden absolute top-0 left-0 w-full h-screen flex flex-col justify-between">
         {Array.from({ length: 10 }).map((item, i) => (
           <div
             className="w-full h-[1px] opacity-20 bg-neutral-400"
@@ -29,7 +30,7 @@ const Homepage = () => {
           Effortless school management, from attendance tracking to grade
           reporting, all in one place.
         </p>
-        <ButtonComp text="🐱‍🏍 Try now !" />
+        <ButtonComp link="" text="🐱‍🏍 Try now !" />
 
         {/* left */}
         <div className=" absolute bottom-5 left-0 flex  flex-col gap-5">

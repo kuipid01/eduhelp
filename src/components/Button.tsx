@@ -1,22 +1,24 @@
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface ButtonCompProps {
-  transparent?:boolean,
-  text:string
+  transparent?: boolean;
+  text: string;
+  link?: string;
 }
-const ButtonComp:React.FC<ButtonCompProps> = ({transparent,text}) => {
-  if (transparent) return (
-    <Button variant="outline">{text}</Button>
-
-  )
+const ButtonComp: React.FC<ButtonCompProps> = ({ transparent, text, link }) => {
+  if (transparent)
+    return (
+      <Button className="w-fit" variant="outline">
+        {" "}
+        <Link href={link || ""}>{text}</Link>
+      </Button>
+    );
   return (
-    <Button asChild>
-    <Link href="/login">{text}</Link>
-  </Button>
+    <Button className="w-fit" asChild>
+      <Link href={link || ""}>{text}</Link>
+    </Button>
+  );
+};
 
-  )
-}
-
-export default ButtonComp
+export default ButtonComp;
