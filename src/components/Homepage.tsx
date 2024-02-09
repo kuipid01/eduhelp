@@ -6,7 +6,7 @@ import Extras from "./Extras";
 
 const Homepage = () => {
   return (
-    <section className="relative flex justify-between flex-col items-center text-white px-10 bg-brand/prim-blue h-screen">
+    <section className="relative flex justify-between flex-col items-center text-white px-5 sm:px-10 bg-brand/prim-blue h-screen">
       <Navbar />{" "}
       <div className="z-10 bg-green-300 overflow-hidden opacity-20 absolute top-0 left-0 w-full h-full flex justify-between">
         {Array.from({ length: 10 }).map((item, i) => (
