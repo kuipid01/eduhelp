@@ -14,21 +14,26 @@ export default function Home() {
       <Homepage />
       <Extras
         linkAddress=""
-        image=""
+        image="/img3.jpg"
         textDetails={textFirst}
         reversed={false}
       />
       <Addboard />
       <Extras
         linkAddress=""
-        image=""
+        image="/img1.jpg"
         textDetails={textFirst}
         reversed={false}
       />
-      <Extras linkAddress="" image="" textDetails={textFirst} reversed={true} />
       <Extras
         linkAddress=""
-        image=""
+        image="/img3.jpg"
+        textDetails={textFirst}
+        reversed={true}
+      />
+      <Extras
+        linkAddress=""
+        image="/img2.jpg"
         textDetails={textFirst}
         reversed={false}
       />

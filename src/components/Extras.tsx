@@ -27,7 +27,7 @@ const Extras: React.FC<ExtraProps> = ({
           className="  object-cover relative object-center"
           fill
           alt="description-images"
-          src="/img1.jpg"
+          src={image}
         />
       </div>
       <div className=" flex flex-col gap-5">
