@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Footer from "@/components/Footer";
+import AdminNav from "@/components/AdminNav";
 
 const inter = DM_Sans({ subsets: ["latin"] });
 
@@ -17,8 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
-      <Footer />
+      <body className={inter.className}>
+        <main>
+          <AdminNav />
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

@@ -30,7 +30,7 @@ const Homepage = () => {
           Effortless school management, from attendance tracking to grade
           reporting, all in one place.
         </p>
-        <ButtonComp link="" text="🐱‍🏍 Try now !" />
+        <ButtonComp link="/register" text="🐱‍🏍 Try now !" />
 
         {/* left */}
         <div className=" absolute bottom-5 left-0 flex  flex-col gap-5">
