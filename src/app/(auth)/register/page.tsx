@@ -92,10 +92,10 @@ const Page = () => {
   };
   return (
     <div className="w-full  relative h-screen  bg-lighter-grey flex justify-center items-center">
-      <div className=" h-full flex flex-1 justify-center items-center ">
+      <div className=" h-full flex px-5 sm:px-1 flex-1 justify-center items-center ">
         <form
           // onSubmit={handleSubmit(onSubmit)}
-          className=" shadow-lg w-fit border min-w-[500px] items-left justify-center items-center  z-[300]  h-fit   py-[25px] px-[30px] flex flex-col rounded-2xl bg-white "
+          className=" shadow-lg  border w-full sm:min-w-[500px] items-left justify-center items-center  z-[300]  h-fit   py-[25px] px-[30px] flex flex-col rounded-2xl bg-white "
         >
           <h1 className="font-bold text-center text-xl">Join Eduhelp</h1>
           <p className="text-center text-[15px]  font-light my-3 ">
