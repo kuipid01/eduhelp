@@ -21,7 +21,7 @@ const Links = [
   {
     id: 1,
     icon: <Home size={18} />,
-    text: "Dashboard",
+    text: "Overview",
     active: true,
   },
   {
