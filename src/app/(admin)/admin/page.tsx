@@ -42,7 +42,6 @@ const page = () => {
           <Card title="Students enrolled" subtext="100" />
         </div>
       </div>
-      <SidebarComp />
     </div>
   );
 };

@@ -1,5 +1,12 @@
 "use client";
 import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+import {
   ArrowLeft,
   ArrowRight,
   Bell,
@@ -15,6 +22,7 @@ import {
   PersonStanding,
   Settings,
 } from "lucide-react";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Links = [
@@ -23,25 +31,29 @@ const Links = [
     icon: <Home size={18} />,
     text: "Overview",
     active: true,
+    link: "/admin",
   },
   {
     id: 2,
     icon: <Book size={18} />,
     text: "Classes & Subjects",
     active: false,
+    link: "/admin/subjects",
   },
   {
     id: 3,
     icon: <Group size={18} />,
     text: "Teachers",
     active: false,
+    link: "/admin/teachers",
   },
-  // {
-  //   id: 4,
-  //   icon: <PersonStanding size={18} />,
-  //   text: "Staff",
-  //   active: false,
-  // },
+  {
+    id: 4,
+    icon: <PersonStanding size={18} />,
+    text: "Students",
+    active: false,
+    link: "/admin/students",
+  },
   {
     id: 5,
     icon: <List size={18} />,
@@ -101,16 +113,17 @@ const SidebarComp = () => {
         <ul className=" flex flex-col w-[250px] gap-5">
           {Links.map((link) => (
             <>
-              <li
-                className={`cursor-pointer  flex w-full  gap-5 px-2 items-center text-sm font-medium  hover:bg-brand/prim-blue/30 transition-all rounded-2xl ${
-                  link.active && " bg-brand/prim-blue/90"
-                }   py-2`}
-                key={link.id}
-              >
-                {" "}
-                <span>{link.icon}</span>
-                <span> {link.text}</span>
-              </li>
+              <Link key={link.id} href={link?.link || "/"}>
+                <li
+                  className={`cursor-pointer  flex w-full  gap-5 px-2 items-center text-sm font-medium  hover:bg-brand/prim-blue/30 transition-all rounded-2xl ${
+                    link.active && " bg-brand/prim-blue/90"
+                  }   py-2`}
+                >
+                  {" "}
+                  <span>{link.icon}</span>
+                  <span> {link.text}</span>
+                </li>
+              </Link>
             </>
           ))}
           <li
@@ -127,15 +140,21 @@ const SidebarComp = () => {
       <ul className=" flex flex-col gap-5">
         {Links.map((link) => (
           <>
-            <li
-              className={`cursor-pointer min-w-[70px] hover:bg-brand/prim-blue/30 transition-all rounded-2xl ${
-                link.active && " bg-brand/prim-blue/90"
-              }  ter py-2`}
-              key={link.id}
-            >
-              {" "}
-              {link.icon}{" "}
-            </li>
+            <Link href={link?.link || "/"}>
+              <li
+                key={link.id}
+                className={`cursor-pointer min-w-[70px] hover:bg-brand/prim-blue/30 transition-all rounded-2xl ${
+                  link.active && " bg-brand/prim-blue/90"
+                }  ter py-2`}
+              >
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger> {link.icon}</TooltipTrigger>
+                    <TooltipContent>{link.text}</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>{" "}
+              </li>
+            </Link>
           </>
         ))}
         <li
