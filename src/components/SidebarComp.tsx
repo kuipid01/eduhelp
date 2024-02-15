@@ -107,24 +107,23 @@ const Links = [
 
 const SidebarComp = () => {
   const [expanded, setExpanded] = useState(false);
-  if (expanded)
+
+  if (expanded) {
     return (
-      <div className=" absolute overflow-y-scroll z-[100] px-[.5rem] top-0 py-[1vh]  h-screen bg-neutral-100 border-r left-0 w-fit ">
-        <ul className=" flex flex-col w-[250px] gap-5">
+      <div className="absolute overflow-y-scroll z-[100] px-[.5rem] top-0 py-[1vh]  h-screen bg-neutral-100 border-r left-0 w-fit ">
+        <ul className="flex flex-col w-[250px] gap-5">
           {Links.map((link) => (
-            <>
-              <Link key={link.id} href={link?.link || "/"}>
-                <li
-                  className={`cursor-pointer  flex w-full  gap-5 px-2 items-center text-sm font-medium  hover:bg-brand/prim-blue/30 transition-all rounded-2xl ${
-                    link.active && " bg-brand/prim-blue/90"
-                  }   py-2`}
-                >
-                  {" "}
-                  <span>{link.icon}</span>
-                  <span> {link.text}</span>
-                </li>
-              </Link>
-            </>
+            <Link key={link.id} href={link?.link || "/"}>
+              <li
+                className={`cursor-pointer  flex w-full  gap-5 px-2 items-center text-sm font-medium  hover:bg-brand/prim-blue/30 transition-all rounded-2xl ${
+                  link.active && " bg-brand/prim-blue/90"
+                }   py-2`}
+              >
+                {" "}
+                <span>{link.icon}</span>
+                <span> {link.text}</span>
+              </li>
+            </Link>
           ))}
           <li
             onClick={() => setExpanded(false)}
@@ -135,14 +134,13 @@ const SidebarComp = () => {
         </ul>
       </div>
     );
-  return (
-    <div className="fixed z-[100] top-0 py-[1vh]  h-screen bg-neutral-100 border-r left-0 w-fit ">
-      <ul className=" flex flex-col gap-5">
-        {Links.map((link) => (
-          <>
-            <Link href={link?.link || "/"}>
+  } else {
+    return (
+      <div className="fixed z-[100] top-0 py-[1vh]  h-screen bg-neutral-100 border-r left-0 w-fit ">
+        <ul className="flex flex-col gap-5">
+          {Links.map((link) => (
+            <Link key={link.id} href={link?.link || "/"}>
               <li
-                key={link.id}
                 className={`cursor-pointer min-w-[70px] hover:bg-brand/prim-blue/30 transition-all rounded-2xl ${
                   link.active && " bg-brand/prim-blue/90"
                 }  ter py-2`}
@@ -155,17 +153,16 @@ const SidebarComp = () => {
                 </TooltipProvider>{" "}
               </li>
             </Link>
-          </>
-        ))}
-        <li
-          onClick={() => setExpanded(true)}
-          className="w-3/4 mx-auto rounded-lg cursor-pointer ter text-brand/prim-blue border border-brand/prim-blue p-1"
-        >
-          <ArrowRight />
-        </li>
-      </ul>
-    </div>
-  );
+          ))}
+          <li
+            onClick={() => setExpanded(true)}
+            className="w-3/4 mx-auto rounded-lg cursor-pointer ter text-brand/prim-blue border border-brand/prim-blue p-1"
+          >
+            <ArrowRight />
+          </li>
+        </ul>
+      </div>
+    );
+  }
 };
-
 export default SidebarComp;

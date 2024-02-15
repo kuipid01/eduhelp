@@ -5,6 +5,7 @@ export const sampleStudents = [
       lastName: "Doe",
       dateOfBirth: "2005-03-12",
       gender: "Male",
+      image:'/svg1.png',
       contactDetails: {
         email: "john.doe@example.com",
         phone: "+234-123-456-7890",
@@ -41,6 +42,7 @@ export const sampleStudents = [
       lastName: "Smith",
       dateOfBirth: "2004-07-21",
       gender: "Female",
+      image:'/svg2.png',
       contactDetails: {
         email: "mary.smith@example.com",
         phone: "+234-123-456-7893",

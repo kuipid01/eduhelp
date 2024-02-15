@@ -4,12 +4,14 @@ import "../globals.css";
 import Footer from "@/components/Footer";
 import AdminNav from "@/components/AdminNav";
 import SidebarComp from "@/components/SidebarComp";
+import StudentNav from "@/components/StudentNav";
+import StudentSideBar from "@/components/StudentSideBar";
 
 const inter = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Edu Help Admin Dashboard",
-  description: "Eduhelp,School management made easy",
+  title: "Student Dashboard",
+  description: "Eduhelp,Student Dashboard",
 };
 
 export default function RootLayout({
@@ -20,10 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="relative">
-          <AdminNav />
-          <div className=" w-full h-full  relative ">
-            <SidebarComp />
+        <main className=" p-5  relative flex gap-5 ">
+          <StudentSideBar />
+          <div className=" flex flex-col  gap-[2rem] flex-1">
+            <StudentNav />
             {children}
           </div>
         </main>
