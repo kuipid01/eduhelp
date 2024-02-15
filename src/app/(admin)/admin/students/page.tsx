@@ -4,7 +4,7 @@ import { sampleStudents } from "../../../../lib/testDatas/testdata";
 import { Delete, DeleteIcon, Edit, Recycle, Trash2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-export const StudentCard = ({ student }: any) => {
+const StudentCard = ({ student }: any) => {
   const {
     firstName,
     studentID,
