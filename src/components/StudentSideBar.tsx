@@ -62,7 +62,7 @@ interface sideBarProps {
 const StudentSideBar: React.FC<sideBarProps> = ({ teacher }) => {
   if (teacher) {
     return (
-      <div className="sticky items-center top-[5vh] overflow-hidden rounded-3xl left-5 p-3 min-w-[250px] w-fit flex flex-col bg-brand/prim-blue h-[95vh] overflow-y-scroll text-white">
+      <div className="sticky items-center top-[5vh] overflow-hidden rounded-3xl left-5 p-3 min-w-[250px] w-fit flex flex-col   bg-brand/prim-blue h-[95vh] justify-between overflow-y-scroll text-white">
         <Image
           alt="student-on-desk"
           width={200}
@@ -81,7 +81,9 @@ const StudentSideBar: React.FC<sideBarProps> = ({ teacher }) => {
             </li>
           ))}
         </ul>
-        <ButtonComp text="Log Out" />
+        <button className=" font-bold w-full py-3 bg-brand/ORANGE rounded-xl  text-white">
+          Log Out
+        </button>
       </div>
     );
   } else {
@@ -105,7 +107,9 @@ const StudentSideBar: React.FC<sideBarProps> = ({ teacher }) => {
             </li>
           ))}
         </ul>
-        <ButtonComp text="Log Out" />
+        <button className=" font-bold w-full py-3 bg-brand/ORANGE rounded-xl  text-white">
+          Log Out
+        </button>
       </div>
     );
   }

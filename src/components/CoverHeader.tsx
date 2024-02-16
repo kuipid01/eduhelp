@@ -26,6 +26,7 @@ const CoverHeader: React.FC<CoverHeaderProps> = ({
           <h1 className="font-black text-2xl">
             You are welcome back, {studentName}!
           </h1>
+
           <p className="font-light text-lg">
             This is your personalised teachers corner,break a leg!!
           </p>
