@@ -33,7 +33,7 @@ const StudentSideBar = () => {
         {studentLinks.map((link, i) => (
           <li className="w-full  " key={i}>
             <Link
-              className="flex bg-red-500 w-[200px] p-2 justify-between "
+              className="flex  w-[200px] p-2 justify-between "
               href={`/student/${link.link}`}
             >
               {link.icon} <span className="capitalize">{link.title}</span>
