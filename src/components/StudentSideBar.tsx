@@ -1,12 +1,16 @@
 import {
   CircleDollarSign,
   CreditCard,
+  Edit2,
+  Home,
   Hourglass,
   LayoutDashboard,
+  SearchCheck,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import ButtonComp from "./Button";
 
 export const studentLinks = [
   {
@@ -25,24 +29,86 @@ export const studentLinks = [
     link: "/result",
   },
 ];
-const StudentSideBar = () => {
-  return (
-    <div className="sticky items-center top-[5vh] overflow-hidden rounded-3xl left-5 p-3 min-w-[250px] w-fit flex flex-col bg-brand/prim-blue h-[95vh] overflow-y-scroll text-white">
-      <Image alt="student-on-desk" width={200} height={200} src="/desk3d.png" />
-      <ul className="flex mt-[2rem] flex-col gap-3 text-white">
-        {studentLinks.map((link, i) => (
-          <li className="w-full  " key={i}>
-            <Link
-              className="flex  w-[200px] p-2 justify-between "
-              href={`/student/${link.link}`}
-            >
-              {link.icon} <span className="capitalize">{link.title}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+export const teacherLinks = [
+  {
+    title: "Dashboard",
+    icon: <LayoutDashboard />,
+    link: "",
+  },
+  {
+    title: "Class Students",
+    icon: <CircleDollarSign />,
+    link: "/classStudents",
+  },
+  {
+    title: "Documents",
+    icon: <Edit2 />,
+    link: "/documents",
+  },
+  {
+    title: "Timetable",
+    icon: <SearchCheck />,
+    link: "/timetable",
+  },
+  {
+    title: "My Classes",
+    icon: <Home />,
+    link: "/classes",
+  },
+];
+interface sideBarProps {
+  teacher: boolean;
+}
+const StudentSideBar: React.FC<sideBarProps> = ({ teacher }) => {
+  if (teacher) {
+    return (
+      <div className="sticky items-center top-[5vh] overflow-hidden rounded-3xl left-5 p-3 min-w-[250px] w-fit flex flex-col bg-brand/prim-blue h-[95vh] overflow-y-scroll text-white">
+        <Image
+          alt="student-on-desk"
+          width={200}
+          height={200}
+          src="/desk3d.png"
+        />
+        <ul className="flex mt-[2rem] flex-col gap-3 text-white">
+          {teacherLinks.map((link, i) => (
+            <li className="w-full  " key={i}>
+              <Link
+                className="flex  w-fit gap-3 p-2 justify-between "
+                href={`/student/${link.link}`}
+              >
+                {link.icon} <span className="capitalize">{link.title}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <ButtonComp text="Log Out" />
+      </div>
+    );
+  } else {
+    return (
+      <div className="sticky items-center top-[5vh] overflow-hidden rounded-3xl left-5 p-3 min-w-[250px] w-fit flex flex-col bg-brand/prim-blue h-[95vh] overflow-y-scroll text-white">
+        <Image
+          alt="student-on-desk"
+          width={200}
+          height={200}
+          src="/desk3d.png"
+        />
+        <ul className="flex mt-[2rem] flex-col gap-3 text-white">
+          {studentLinks.map((link, i) => (
+            <li className="w-full  " key={i}>
+              <Link
+                className="lex  w-fit gap-3 p-2 justify-between"
+                href={`/student/${link.link}`}
+              >
+                {link.icon} <span className="capitalize">{link.title}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <ButtonComp text="Log Out" />
+      </div>
+    );
+  }
 };
 
 export default StudentSideBar;
