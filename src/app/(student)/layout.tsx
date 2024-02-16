@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main className=" p-5  relative flex gap-5 ">
-          <StudentSideBar />
+          <StudentSideBar teacher={false} />
           <div className=" flex flex-col  gap-[2rem] flex-1">
             <StudentNav />
             {children}
