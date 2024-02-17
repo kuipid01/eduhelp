@@ -1,6 +1,7 @@
 import { Heart, Star } from "lucide-react";
 import React from "react";
 import { StringSchema } from "yup";
+import { CarouselItem } from "./ui/carousel";
 export interface PlanProps {
   id: number;
   price: number;
@@ -21,8 +22,8 @@ const PlanCard = ({
 }) => {
   const { price, type, perks } = plan;
   return (
-    <div
-      className={`  transition-all min-h-[450px] h-fit relative border rounded-2xl flex flex-col items-center justify-between  text-lg py-[3rem] px-[2rem] w-[calc(33.333%-20px)] ${
+    <CarouselItem
+      className={`   transition-all min-h-[450px] h-fit relative border rounded-2xl flex flex-col items-center md:basis-1/2 lg:basis-1/3 justify-between  text-lg py-[3rem] px-[2rem] ${
         id === selectedPlan
           ? "bg-brand/prim-blue hover:bg-brand/prim-blue/90  text-white rounded-2xl relative"
           : " text-black bg-white"
@@ -77,7 +78,7 @@ const PlanCard = ({
       >
         Get Started
       </button>
-    </div>
+    </CarouselItem>
   );
 };
 

@@ -3,7 +3,7 @@ import ButtonComp from "./Button";
 
 const Addboard = () => {
   return (
-    <div className="relative overflow-hidden flex gap-5 flex-col items-left justify-center px-5 sm:px-10 sm:py-[30px] text-white  bg-brand/prim-blue h-fit max-h-[40vh]">
+    <div className="relative overflow-hidden flex gap-5 flex-col items-left justify-center px-5 sm:px-10 py-[30px] text-white  bg-brand/prim-blue h-fit max-h-[40vh]">
       <div className="z-10 bg-green-300 overflow-y-hidden opacity-20 absolute top-0 left-0 w-full h-full flex justify-between">
         {Array.from({ length: 4 }).map((item, i) => (
           <div className="w-[1px]  h-screen bg-neutral-400" key={i}></div>

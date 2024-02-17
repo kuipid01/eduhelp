@@ -1,6 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import PlanCard, { PlanProps } from "./PlanCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Plans = () => {
   const [selectedPlan, setSelectedPlan] = useState<number>(1);
@@ -54,31 +61,30 @@ const Plans = () => {
   ];
 
   return (
-    <section className="w-full bg-brand/ORANGE text-white  py-[2rem] mx-auto h-fit md:min-h-screen">
-      <div className="w-4/5 mx-auto">
-        <h1 className="  font-black text-xl text-center">
-          Choose Your Preffered Plan
-        </h1>
-        <p
-          className=" text-lg text-center
+    <section className="w-full md:w-[80%] py-[2rem] mx-auto h-fit md:min-h-screen">
+      <h1 className="text-black  font-black text-xl text-center">
+        Choose Your Preffered Plan
+      </h1>
+      <p
+        className=" text-lg text-center
       "
-        >
-          The best plans available on the web
-        </p>
-
-        {
-          <div className="flex mt-[1rem]  flex-wrap justify-between">
-            {plans.map((plan, i) => (
-              <PlanCard
-                key={i}
-                plan={plan as PlanProps}
-                id={i}
-                selectedPlan={selectedPlan}
-              />
-            ))}
-          </div>
-        }
-      </div>
+      >
+        The best plans available on the web
+      </p>
+      <Carousel>
+        <CarouselContent className="gap-[20px]">
+          {plans.map((plan, i) => (
+            <PlanCard
+              key={i}
+              plan={plan as PlanProps}
+              id={i}
+              selectedPlan={selectedPlan}
+            />
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </section>
   );
 };
