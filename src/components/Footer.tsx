@@ -13,7 +13,7 @@ const Footer = () => {
   const currentYear = currentDate.getFullYear();
   return (
     <>
-      <div className="flex sm:hidden px-5 flex-col gap-5 justify-center items-center text-white bg-brand/prim-blue rounded-t-3xl  h-[40vh] w-full">
+      <div className="flex   sm:hidden px-5 flex-col gap-5 justify-center items-center text-white bg-brand/prim-blue rounded-t-3xl  h-[40vh] w-full">
         <h1 className="sm:max-w-[850px]  leading-[150%] w-full text-lg sm:text-3xl font-medium text-center">
           Elevate Learning Experiences with Our School Management Solution
         </h1>

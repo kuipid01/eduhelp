@@ -1,6 +1,7 @@
 import Addboard from "@/components/Addboard";
 import Extras from "@/components/Extras";
 import Homepage from "@/components/Homepage";
+import Plans from "@/components/Plans";
 import Testimonial from "@/components/Testimonial";
 
 export default function Home() {
@@ -37,6 +38,7 @@ export default function Home() {
         textDetails={textFirst}
         reversed={false}
       />
+      <Plans />
       <Testimonial />
     </main>
   );
