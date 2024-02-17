@@ -22,10 +22,10 @@ const PlanCard = ({
   const { price, type, perks } = plan;
   return (
     <div
-      className={` hover:bg-brand/prim-blue/50 transition-all min-h-[450px] h-fit relative border rounded-2xl flex flex-col items-center justify-between  text-lg py-[3rem] px-[2rem] w-[calc(33.333%-20px)] ${
+      className={`  transition-all min-h-[450px] h-fit relative border rounded-2xl flex flex-col items-center justify-between  text-lg py-[3rem] px-[2rem] w-[calc(33.333%-20px)] ${
         id === selectedPlan
           ? "bg-brand/prim-blue hover:bg-brand/prim-blue/90  text-white rounded-2xl relative"
-          : "  bg-brand/prim-blue/10"
+          : " text-black bg-white"
       }`}
     >
       {id === 1 && (
