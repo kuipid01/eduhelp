@@ -69,6 +69,7 @@ const Plans = () => {
         <div className="flex mt-[1rem]  flex-wrap justify-between">
           {plans.map((plan, i) => (
             <PlanCard
+              key={i}
               plan={plan as PlanProps}
               id={i}
               selectedPlan={selectedPlan}
