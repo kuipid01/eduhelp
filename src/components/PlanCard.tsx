@@ -23,7 +23,7 @@ const PlanCard = ({
   const { price, type, perks } = plan;
   return (
     <CarouselItem
-      className={`   transition-all min-h-[450px] h-fit relative border rounded-2xl flex flex-col items-center md:basis-1/2 lg:basis-1/3 justify-between  text-lg py-[3rem] px-[2rem] ${
+      className={` border-brand/prim-blue   transition-all min-h-[450px] h-fit relative border rounded-2xl flex flex-col items-center  basis-full md:basis-1/2 lg:basis-1/3 justify-between  text-lg py-[3rem] px-[2rem] ${
         id === selectedPlan
           ? "bg-brand/prim-blue hover:bg-brand/prim-blue/90  text-white rounded-2xl relative"
           : " text-black bg-white"

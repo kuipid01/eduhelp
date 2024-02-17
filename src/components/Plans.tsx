@@ -66,13 +66,13 @@ const Plans = () => {
         Choose Your Preffered Plan
       </h1>
       <p
-        className=" text-lg text-center
+        className="mt-3 mb-5 text-lg text-center
       "
       >
         The best plans available on the web
       </p>
-      <Carousel>
-        <CarouselContent className="gap-[20px]">
+      <Carousel className="">
+        <CarouselContent className="gap-[20px] ">
           {plans.map((plan, i) => (
             <PlanCard
               key={i}
