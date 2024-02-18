@@ -15,30 +15,28 @@ const AdminCard: React.FC<AdminCardProps> = ({
 }) => {
   return (
     <div
-      className={`" w-full flex-col overflow-y-hidden  flex justify-center h-[30vh] md:h-[60vh] ${
+      className={`" relative w-full flex-col overflow-y-hidden  flex justify-center h-[20vh] md:h-[60vh] ${
         bgColor ? bgColor : " bg-brand/ORANGE"
       } text-black`}
     >
-      <h1 className="mb-[2rem] w-4/5 mx-auto  text-xl font-black leading-9 z-20">
+      <h1 className=" text-2xl md:text-xl text-center  font-black leading-9 z-20">
         {title}
       </h1>
 
-      <div className="absolute right-3 -bottom-10 w-fit h-fit">
+      <div className="absolute right-3 -bottom-10 w-[150px] md:w-[500px] h-[150px] md:h-[500px]">
         <Image
           className=" object-cover object-center"
           src={image1 || ""}
-          height={500}
-          width={400}
-          alt="3dsvg"
+          fill
+          alt="3d-svg"
         />
       </div>
-      <div className="absolute z-10 -left-[100px]  -bottom-[100px] w-fit h-fit">
+      <div className="absolute  right-0  w-[150px] md:w-[500px] h-[150px] md:h-[500px] z-10 -left-[100px]  -bottom-[100px] ">
         <Image
           className=" object-cover object-center"
           src={image2 || ""}
-          height={500}
-          width={400}
-          alt="3dsvg"
+          fill
+          alt="3d-svg"
         />
       </div>
     </div>

@@ -20,7 +20,7 @@ const TeacherCard: React.FC<TeacherCardProps> = ({
   return (
     <Link
       href={link}
-      className="w-full  border sm:w-[calc(50%-10px)]  overflow-hidden h-[250px] rounded-xl hover:shadow-sm hover:shadow-brand/NEUTRAL/50 transition-all flex flex-col justify-between "
+      className="w-full  border md:w-[calc(50%-10px)]  overflow-hidden h-[250px] rounded-xl hover:shadow-sm hover:shadow-brand/NEUTRAL/50 transition-all flex flex-col justify-between "
     >
       <div className={`w-full ${bgColour}  relative h-4/5`}>
         <Image

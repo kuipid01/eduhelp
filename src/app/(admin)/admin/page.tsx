@@ -9,17 +9,17 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className=" pl-[100px] w-full h-full  relative ">
+    <div className="  w-full h-full  relative ">
       <div className=" flex flex-col overflow-y-hidden w-full  relative h-fit">
         <AdminCard title="Dashboard" image1="/svg1.png" image2="/svg2.png" />
       </div>
-      <div className=" flex flex-col md:flex-row my-[3rem] mx-auto  w-[85%] gap-[2rem] relative">
+      <div className=" flex pl-[80px] md:pl-0 flex-col md:flex-row my-[3rem] mx-auto w-full  md:w-[85%] gap-[2rem] relative">
         <div className="w-full h-fit">
           <h1 className="font-black text-2xl text-brand/prim-blue">
             Quick Links
           </h1>
 
-          <div className=" flex flex-col w-full md:flex-row mt-[3rem] gap-[20px] flex-wrap">
+          <div className=" flex flex-col w-[95%] md:flex-row mt-[3rem] gap-[20px] flex-wrap">
             <TeacherCard
               link="/students"
               bgColour="bg-purple-700"
@@ -65,7 +65,7 @@ const page = () => {
           {/* LESSON nOTE */}
           {/* eXAMINATION qUESTIONS */}
         </div>
-        <div className="flex-1 h-[65vh] ">
+        <div className="flex-1 h-[30vh] w-fit md:h-[65vh] ">
           <CalndarComponent />
           {/* <ClassTeacherCorner /> */}
           <div className=" mt-[2rem] flex  text-lg justify-between items-center">

@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <main className="relative">
           <AdminNav />
-          <div className=" w-full h-full  relative ">
+          <div className=" w-full h-full  md:px-0 relative ">
             <SidebarComp />
             {children}
           </div>
