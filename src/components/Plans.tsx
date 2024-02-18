@@ -61,9 +61,9 @@ const Plans = () => {
   ];
 
   return (
-    <section className="w-full md:w-[80%] py-[2rem] mx-auto h-fit md:min-h-screen">
+    <section className="w-full  md:w-[90%] py-[2rem] mx-auto h-fit md:min-h-screen">
       <h1 className="text-black  font-black text-xl text-center">
-        Choose Your Preffered Plan
+        Choose Your Preferred Plan
       </h1>
       <p
         className="mt-3 mb-5 text-lg text-center
@@ -71,15 +71,22 @@ const Plans = () => {
       >
         The best plans available on the web
       </p>
-      <Carousel className="">
-        <CarouselContent className="gap-[20px] ">
+      <Carousel
+        opts={{
+          align: "start",
+        }}
+        className="w-full "
+      >
+        <CarouselContent className="">
           {plans.map((plan, i) => (
-            <PlanCard
-              key={i}
-              plan={plan as PlanProps}
-              id={i}
-              selectedPlan={selectedPlan}
-            />
+            <CarouselItem className=" md:basis-1/2 lg:basis-1/3">
+              <PlanCard
+                key={i}
+                plan={plan as PlanProps}
+                id={i}
+                selectedPlan={selectedPlan}
+              />
+            </CarouselItem>
           ))}
         </CarouselContent>
         <CarouselPrevious />

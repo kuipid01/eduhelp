@@ -22,8 +22,8 @@ const PlanCard = ({
 }) => {
   const { price, type, perks } = plan;
   return (
-    <CarouselItem
-      className={` border-brand/prim-blue   transition-all min-h-[450px] h-fit relative border rounded-2xl flex flex-col items-center  basis-full md:basis-1/2 lg:basis-1/3 justify-between  text-lg py-[3rem] px-[2rem] ${
+    <div
+      className={` px-[2rem] border-brand/prim-blue   transition-all min-h-[450px] h-fit relative border rounded-2xl flex flex-col items-center mx-auto sm:w-full w-[90%] justify-between  text-lg py-[3rem]  ${
         id === selectedPlan
           ? "bg-brand/prim-blue hover:bg-brand/prim-blue/90  text-white rounded-2xl relative"
           : " text-black bg-white"
@@ -78,7 +78,7 @@ const PlanCard = ({
       >
         Get Started
       </button>
-    </CarouselItem>
+    </div>
   );
 };
 
