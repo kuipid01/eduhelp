@@ -65,10 +65,10 @@ const page = () => {
           {/* LESSON nOTE */}
           {/* eXAMINATION qUESTIONS */}
         </div>
-        <div className="flex-1 h-[30vh] w-fit md:h-[65vh] ">
+        <div className="flex-1 h-[30vh] w-full md:h-[65vh] ">
           <CalndarComponent />
           {/* <ClassTeacherCorner /> */}
-          <div className=" mt-[2rem] flex  text-lg justify-between items-center">
+          <div className=" mt-[2rem] flex w-full text-lg justify-between items-center">
             <h1 className="text-black font-black ">Notifications</h1>
             <Link className=" text-brand/prim-blue" href="/">
               See all
