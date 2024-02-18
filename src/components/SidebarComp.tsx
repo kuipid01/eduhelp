@@ -110,7 +110,7 @@ const SidebarComp = () => {
 
   if (expanded) {
     return (
-      <div className="absolute overflow-y-scroll z-[100] px-[.5rem] top-0 py-[1vh]  h-screen bg-neutral-100 border-r left-0 w-fit ">
+      <div className="fixed  overflow-y-scroll z-[100] px-[.5rem] top-0 py-[1vh]  h-screen bg-neutral-100 border-r left-0 w-fit ">
         <ul className="flex flex-col w-[250px] gap-5">
           {Links.map((link) => (
             <Link key={link.id} href={link?.link || "/"}>

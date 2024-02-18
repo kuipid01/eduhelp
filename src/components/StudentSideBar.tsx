@@ -88,7 +88,7 @@ const StudentSideBar: React.FC<sideBarProps> = ({ teacher }) => {
     );
   } else {
     return (
-      <div className="sticky items-center top-[5vh] overflow-hidden rounded-3xl left-5 p-3 min-w-[250px] w-fit flex flex-col bg-brand/prim-blue h-[95vh] overflow-y-scroll text-white">
+      <div className="sticky justify-between items-center top-[5vh] overflow-hidden rounded-3xl left-5 p-3 min-w-[250px] w-fit flex flex-col bg-brand/prim-blue h-[95vh] overflow-y-scroll text-white">
         <Image
           alt="student-on-desk"
           width={200}
@@ -99,7 +99,7 @@ const StudentSideBar: React.FC<sideBarProps> = ({ teacher }) => {
           {studentLinks.map((link, i) => (
             <li className="w-full  " key={i}>
               <Link
-                className="lex  w-fit gap-3 p-2 justify-between"
+                className="flex  w-fit gap-5 p-2 justify-between"
                 href={`/student/${link.link}`}
               >
                 {link.icon} <span className="capitalize">{link.title}</span>

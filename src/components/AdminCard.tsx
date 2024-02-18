@@ -15,7 +15,7 @@ const AdminCard: React.FC<AdminCardProps> = ({
 }) => {
   return (
     <div
-      className={`" w-full flex-col  flex justify-center h-[60vh] absolute left-0 ${
+      className={`" w-full flex-col overflow-y-hidden  flex justify-center h-[30vh] md:h-[60vh] ${
         bgColor ? bgColor : " bg-brand/ORANGE"
       } text-black`}
     >
