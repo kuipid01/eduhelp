@@ -4,6 +4,7 @@ import "../globals.css";
 import Footer from "@/components/Footer";
 import AdminNav from "@/components/AdminNav";
 import SidebarComp from "@/components/SidebarComp";
+import SmallScreenNav from "@/components/SmallScreenNav";
 
 const inter = DM_Sans({ subsets: ["latin"] });
 
@@ -20,12 +21,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="relative">
-          <AdminNav />
-          <div className=" w-full h-full  md:px-0 relative ">
-            <SidebarComp />
-            {children}
+        <main className="  flex  relative ">
+          <div className="flex md:hidden">
+            <SmallScreenNav />
           </div>
+
+          <div className="hidden md:flex">
+            <SidebarComp />
+          </div>
+
+          <div className=" flex flex-col  gap-[2rem] flex-1 ">{children}</div>
         </main>
       </body>
     </html>

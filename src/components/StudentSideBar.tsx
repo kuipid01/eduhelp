@@ -88,7 +88,7 @@ const StudentSideBar: React.FC<sideBarProps> = ({ teacher }) => {
     );
   } else {
     return (
-      <div className="sticky justify-between items-center top-[5vh] overflow-hidden rounded-3xl left-5 p-3 min-w-[250px] w-fit flex flex-col bg-brand/prim-blue h-[95vh] overflow-y-scroll text-white">
+      <div className="sticky justify-between items-center top-[5vh] overflow-hidden rounded-3xl left-5 p-3 min-w-[250px] w-fit flex flex-col bg-brand/prim-blue h-[95vh] overflow-y-auto text-white">
         <Image
           alt="student-on-desk"
           width={200}

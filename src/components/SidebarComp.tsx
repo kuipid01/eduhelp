@@ -25,7 +25,7 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 
-const Links = [
+export const Links = [
   {
     id: 1,
     icon: <Home size={18} />,
@@ -107,11 +107,11 @@ const Links = [
 
 const SidebarComp = () => {
   const [expanded, setExpanded] = useState(false);
-
+  const [showSmallNav, setshowSmallNav] = useState(false);
   if (expanded) {
     return (
-      <div className="fixed  overflow-y-scroll z-[100] px-[.5rem] top-0 py-[1vh]  h-screen bg-neutral-100 border-r left-0 w-fit ">
-        <ul className="flex flex-col w-[250px] gap-5">
+      <div className=" sticky items-center top-[0vh]   overflow-y-auto left-0 p-1 min-w-[40px]  flex flex-col   bg-gray-100 h-screen justify-between  text-white w-[250px]  ">
+        <ul className="flex flex-col text-black w-full gap-5">
           {Links.map((link) => (
             <Link key={link.id} href={link?.link || "/"}>
               <li
@@ -136,8 +136,11 @@ const SidebarComp = () => {
     );
   } else {
     return (
-      <div className="fixed z-[100] top-0 py-[1vh]  h-screen bg-neutral-100 border-r left-0 w-fit ">
-        <ul className="flex flex-col gap-5">
+      <div
+        className=" sticky items-center top-[0vh]   overflow-y-auto left-0 p-1 min-w-[40px] w-fit flex flex-col   bg-gray-100 h-screen justify-between  text-white
+    "
+      >
+        <ul className="flex text-black flex-col gap-5">
           {Links.map((link) => (
             <Link key={link.id} href={link?.link || "/"}>
               <li

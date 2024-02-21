@@ -90,12 +90,13 @@ const Students = () => {
               </small>
             </div>
           </div>
-
-          {sampleStudents.map((student) => (
-            <li className="bg-white p-2" key={student.studentID}>
-              <StudentCard student={student} />
-            </li>
-          ))}
+          <ul className=" w-full">
+            {sampleStudents.map((student) => (
+              <li className="bg-white p-2" key={student.studentID}>
+                <StudentCard student={student} />
+              </li>
+            ))}
+          </ul>
         </ol>
       </div>
     </div>

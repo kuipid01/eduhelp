@@ -1,4 +1,5 @@
 import AdminCard from "@/components/AdminCard";
+import AdminNav from "@/components/AdminNav";
 import CalndarComponent from "@/components/CalndarComponent";
 import Card from "@/components/Card";
 import SidebarComp from "@/components/SidebarComp";
@@ -13,13 +14,13 @@ const page = () => {
       <div className=" flex flex-col overflow-y-hidden w-full  relative h-fit">
         <AdminCard title="Dashboard" image1="/svg1.png" image2="/svg2.png" />
       </div>
-      <div className=" flex pl-[80px] md:pl-0 flex-col md:flex-row my-[3rem] mx-auto w-full  md:w-[85%] gap-[2rem] relative">
+      <div className=" md:px-5 flex  flex-col md:flex-row my-[3rem] mx-auto w-full  gap-[2rem] relative">
         <div className="w-full h-fit">
           <h1 className="font-black text-2xl text-brand/prim-blue">
             Quick Links
           </h1>
 
-          <div className=" flex flex-col w-[95%] md:flex-row mt-[3rem] gap-[20px] flex-wrap">
+          <div className=" flex flex-col w-full md:flex-row mt-[3rem] gap-[20px] flex-wrap">
             <TeacherCard
               link="/students"
               bgColour="bg-purple-700"
@@ -58,14 +59,8 @@ const page = () => {
               image="/woman3d.png"
             />
           </div>
-          {/* <tOTALnUMBERoFsTUDENT/> */}
-          {/* aTTENDANCE */}
-          {/* pERSONAL tIME tABLE */}
-          {/* CLASSpROJECT */}
-          {/* LESSON nOTE */}
-          {/* eXAMINATION qUESTIONS */}
         </div>
-        <div className="flex-1 h-[30vh] w-full md:h-[65vh] ">
+        <div className="flex-1 h-[30vh]  w-full md:h-[65vh] ">
           <CalndarComponent />
           {/* <ClassTeacherCorner /> */}
           <div className=" mt-[2rem] flex w-full text-lg justify-between items-center">

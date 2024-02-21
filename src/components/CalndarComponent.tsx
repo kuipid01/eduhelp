@@ -9,7 +9,7 @@ const CalndarComponent = () => {
       mode="single"
       selected={date}
       onSelect={setDate}
-      className="rounded-xl w-fit shadow shadow-amber-300 border"
+      className="rounded-xl w-full md:w-fit shadow shadow-amber-300 border"
     />
   );
 };
