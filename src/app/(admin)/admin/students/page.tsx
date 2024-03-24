@@ -1,16 +1,24 @@
+"use client"
 import AdminCard from "@/components/AdminCard";
 import React, { useState } from "react";
 import { sampleStudents } from "../../../../lib/testDatas/testdata";
 import { Delete, DeleteIcon, Edit, PlusIcon, Recycle, Trash2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import axios from 'axios'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { InferType } from 'yup';
+import {studentSchema} from  '../../../lib/validationSchemas/schema'
+import { StudentFormData } from "@/app/types/types";
+import { Student } from "@/app/lib/models/schoolModel";
+import { addNewStudent } from "@/app/actions/actions";
 const StudentCard = ({ student }: any) => {
   const {
     firstName,
@@ -64,13 +72,49 @@ const StudentCard = ({ student }: any) => {
 
 const Students = () => {
 const [displayForm,setDisplayForm] = useState(false)
-  return (
+// const {
+//   register,
+//   handleSubmit,
+//   formState: { errors },
+// } = useForm({
+//   resolver: yupResolver(studentSchema ),
+// })
+// const onSubmit = (data:StudentFormData) => {
+//   axios.post('api/')
+// }
+ return (
     <div className="  relative min-h-screen w-full flex-1">
       {
         displayForm && (
-          <div className="w-full ter">
-          <div className="flex w-full h-screen  fixed top-0 left-0 bg-gray-300 blur"></div>
+          <div className="w-full h-screen fixed  flex-col top-0 left-0 z-[10000] ter">
+          <div className="flex w-full h-screen  absolute top-0 left-0 bg-gray-300 opacity-80 blur-md "></div>
+          <h1 className='text-2xl z-[10000] relative  text-black text-left font-bold'>Add a student</h1>
+          <form action={addNewStudent} className='bg-white gap-2 flex flex-col  z-[10000] relative w-4/5 md:w-2/4 p-3 rounded-xl text-black' >
           
+      <input type="text" name="name" className='w-full h-10 p-2 rounded-md border-2 border-gray-400'  />
+   {/* //  <p>{errors.name?.message}</p>  */}
+
+      <input type="number" name="age" className='w-full h-10 p-2 rounded-md border-2 border-gray-400' />
+   {/* //  <p>{errors.age?.message}</p>  */}
+
+      <input type="text" name="address" className='w-full h-10 p-2 rounded-md border-2 border-gray-400' />
+   {/* //  <p>{errors.grade?.message}</p>  */}
+
+      <input type="text" name="contact" className='w-full h-10 p-2 rounded-md border-2 border-gray-400'    />
+     {/* //  <p>{errors.address?.message}</p>  */}
+
+      <input type="text" name="guardian" className='w-full h-10 p-2 rounded-md border-2 border-gray-400'    />
+     {/* //  <p>{errors.contact?.message}</p>  */}
+
+      <input type="file" name="image" className='w-full h-10 p-2 rounded-md border-2 border-gray-400'     />
+     {/* //  <p>{errors.guardian?.message}</p>  */}
+
+      <input  name="dateOfBirth" className='w-full h-10 p-2 rounded-md border-2 border-gray-400'    type="date" />
+     {/* //  <p>{errors.dateOfBirth?.message}</p>  */}
+
+   
+      <button type="submit"  className='' >Add Student</button>
+    </form>
           </div>
         )
       }
@@ -116,12 +160,12 @@ const [displayForm,setDisplayForm] = useState(false)
           </ul>
         </ol>
       </div>
-      <div onClick={() => setDisplayForm(true)} className='flex absolute bottom-3 bg-gray-400 p-3 right-3 size-10 cursor-pointer ter hover:bg-gray-300 transition-all rounded-md border-gray-600 '>
+      <div onClick={() => setDisplayForm(true)} className='flex absolute border-2 bottom-3 bg-dray-200 p-3 right-3 size-10 cursor-pointer ter hover:bg-gray-300 transition-all rounded-md border-gray-600 '>
    
         <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger>      <PlusIcon  size={50}/></TooltipTrigger>
-                    <TooltipContent>Add Student</TooltipContent>
+                    <TooltipTrigger>      <PlusIcon  size={30}/></TooltipTrigger>
+                    <TooltipContent className="">Add Student</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
       </div>

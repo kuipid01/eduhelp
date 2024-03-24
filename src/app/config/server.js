@@ -1,17 +1,16 @@
-import mongoose from 'mongoose';
+import mongoose, { ConnectOptions } from 'mongoose';
 
-export const connectDB = async () => {
+
+
+const connectDB = async () => {
   try {
-    const uri = process.env.MONGODB_URI;
-    const options = {
-    //   useNewUrlParser: true,
-    //   useUnifiedTopology: true,
-    //   // Add other connection options if needed
-    };
-    await mongoose.connect(uri, options);
-    console.log('MongoDB connected successfully!');
+    const connectionString = 'mongodb+srv://kuipid01:kuipid01@cluster1.2zgyyng.mongodb.net/?retryWrites=true&w=majority&appName=eduHelp';
+    await mongoose.connect(connectionString, {});
+    console.log(`Database connected successfully`);
   } catch (error) {
-    console.error('Error connecting to MongoDB:', error);
-    process.exit(1); // Exit the process on failure
+    console.error(`Error connecting to database: ${error.message}`);
+    throw error; // Re-throw the error for proper handling elsewhere
   }
 };
+
+export default connectDB;
