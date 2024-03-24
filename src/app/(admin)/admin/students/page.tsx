@@ -1,9 +1,16 @@
 import AdminCard from "@/components/AdminCard";
-import React from "react";
+import React, { useState } from "react";
 import { sampleStudents } from "../../../../lib/testDatas/testdata";
-import { Delete, DeleteIcon, Edit, Recycle, Trash2 } from "lucide-react";
+import { Delete, DeleteIcon, Edit, PlusIcon, Recycle, Trash2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 const StudentCard = ({ student }: any) => {
   const {
     firstName,
@@ -54,9 +61,19 @@ const StudentCard = ({ student }: any) => {
     </li>
   );
 };
+
 const Students = () => {
+const [displayForm,setDisplayForm] = useState(false)
   return (
     <div className="  relative min-h-screen w-full flex-1">
+      {
+        displayForm && (
+          <div className="w-full ter">
+          <div className="flex w-full h-screen  fixed top-0 left-0 bg-gray-300 blur"></div>
+          
+          </div>
+        )
+      }
       <AdminCard
         title="Students"
         image1="/svg2.png"
@@ -98,6 +115,15 @@ const Students = () => {
             ))}
           </ul>
         </ol>
+      </div>
+      <div onClick={() => setDisplayForm(true)} className='flex absolute bottom-3 bg-gray-400 p-3 right-3 size-10 cursor-pointer ter hover:bg-gray-300 transition-all rounded-md border-gray-600 '>
+   
+        <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>      <PlusIcon  size={50}/></TooltipTrigger>
+                    <TooltipContent>Add Student</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
       </div>
     </div>
   );
