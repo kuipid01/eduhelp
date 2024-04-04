@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "../globals.css";
 import Footer from "@/components/Footer";
-import {connectDB} from '../config/server'
 const inter = DM_Sans({ subsets: ["latin"] });
-connectDB()
+
 export const metadata: Metadata = {
   title: "Edu Help",
   description: "Eduhelp,School management made easy",

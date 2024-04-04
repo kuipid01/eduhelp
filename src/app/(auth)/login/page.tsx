@@ -9,7 +9,6 @@ import Link from "next/link";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Image3d from "../../../../public/woman3d.png";
-import { signup } from "./actions";
 // import { Timestamp, addDoc, collection } from "firebase/firestore";
 // import { db } from "@/firebase";
 const Page = () => {
@@ -145,7 +144,6 @@ const Page = () => {
             {errors.password?.message}
           </p>
           <button
-            formAction={signup}
             type="submit"
             disabled={submitting}
             className={` w-full h-[45px] font-medium rounded-lg ${
